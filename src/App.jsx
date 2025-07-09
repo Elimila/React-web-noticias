@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Form from './pages/Form'
 import ListNews from './pages/ListNews'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="/list" element={<ListNews />} />
       </Routes>
+      <Footer /> {/* <- aquí se coloca el pie de página */}
     </>
   )
 }
