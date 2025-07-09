@@ -10,6 +10,7 @@ import Header from './components/Header'
 function App() {
   return (
     <>
+      <Header /> {/* <- ahora sí se renderiza el menú */}
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
@@ -19,6 +20,7 @@ function App() {
     </>
   )
 }
+
 
 export default App
 

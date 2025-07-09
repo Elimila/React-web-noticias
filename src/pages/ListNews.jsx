@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { GlobalContext } from '../context/GlobalState'
 
 function ListNews() {
-  const [news, setNews] = useState([])
+  const { news, getNews } = useContext(GlobalContext)
 
   useEffect(() => {
-    const storedNews = JSON.parse(localStorage.getItem('news')) || []
-    setNews(storedNews)
+    getNews()
   }, [])
 
   return (
@@ -26,4 +26,3 @@ function ListNews() {
 }
 
 export default ListNews
-
