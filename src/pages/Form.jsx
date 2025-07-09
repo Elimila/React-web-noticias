@@ -17,13 +17,12 @@ function Form() {
       content
     }
 
-    addNews(newNews) // usamos el context en lugar de localStorage directo
-
-    navigate('/list') // redirige a la lista
+    addNews(newNews)
+    navigate('/list')
   }
 
   return (
-    <main>
+    <main className="form-view">
       <h1>Crear nueva noticia</h1>
       <form onSubmit={handleSubmit}>
         <div>
