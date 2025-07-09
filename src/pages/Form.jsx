@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { GlobalContext } from '../context/GlobalState'
 
 function Form() {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const navigate = useNavigate()
+  const { addNews } = useContext(GlobalContext)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -15,11 +17,9 @@ function Form() {
       content
     }
 
-    const storedNews = JSON.parse(localStorage.getItem('news')) || []
-    storedNews.push(newNews)
-    localStorage.setItem('news', JSON.stringify(storedNews))
+    addNews(newNews) // usamos el context en lugar de localStorage directo
 
-    navigate('/list') // redirige a la lista de noticias
+    navigate('/list') // redirige a la lista
   }
 
   return (
