@@ -9,7 +9,7 @@ function ListNews() {
   }, [])
 
   return (
-    <main>
+    <main className="list-view">
       <h1>Lista de noticias</h1>
       {news.length === 0 ? (
         <p>No hay noticias guardadas.</p>
